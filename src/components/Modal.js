@@ -64,6 +64,7 @@ class Modal extends Component {
       PropTypes.instanceOf(SafeNodeList),
       PropTypes.arrayOf(PropTypes.instanceOf(SafeHTMLElement))
     ]),
+    onOpen: PropTypes.func,
     onAfterOpen: PropTypes.func,
     onRequestClose: PropTypes.func,
     closeTimeoutMS: PropTypes.number,

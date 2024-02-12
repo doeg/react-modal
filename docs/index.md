@@ -39,9 +39,16 @@ import ReactModal from 'react-modal';
     false
   /* Boolean describing if the modal should be shown or not. */}
 
+  onOpen={
+    handleOpenFunc
+  /* Function that will be run immediately after the modal has opened
+     (i.e., on first mount and any time `isOpen` changes from `false` 
+     to `true`). */}
+
   onAfterOpen={
     handleAfterOpenFunc
-  /* Function that will be run after the modal has opened. */}
+  /* Function that will be asynchronously run on 
+     the next requestAnimationFrame after the modal has opened. */}
 
   onAfterClose={
     handleAfterCloseFunc

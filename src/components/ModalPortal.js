@@ -58,6 +58,7 @@ export default class ModalPortal extends Component {
       PropTypes.instanceOf(SafeNodeList),
       PropTypes.arrayOf(PropTypes.instanceOf(SafeHTMLElement))
     ]),
+    onOpen: PropTypes.func,
     onAfterOpen: PropTypes.func,
     onAfterClose: PropTypes.func,
     onRequestClose: PropTypes.func,
@@ -238,6 +239,13 @@ export default class ModalPortal extends Component {
       }
 
       this.setState({ isOpen: true }, () => {
+        if (this.props.onOpen) {
+          this.props.onOpen({
+            overlayEl: this.overlay,
+            contentEl: this.content
+          });
+        }
+
         this.openAnimationFrame = requestAnimationFrame(() => {
           this.setState({ afterOpen: true });
 
